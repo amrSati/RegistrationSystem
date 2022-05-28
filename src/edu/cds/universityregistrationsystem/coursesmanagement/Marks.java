@@ -8,6 +8,8 @@ public class Marks {
     private double firstTest;  // out of 30
     private double secondTest; // out of 20
     private double yearWork;   // out of 10
+    private String grade;
+    private double gpaScale;
 
     /** Constructors */
     public Marks() {
@@ -23,6 +25,7 @@ public class Marks {
         this.firstTest = (firstTest <= 30) ? firstTest : 0.0;
         this.secondTest = (secondTest <= 20) ? secondTest : 0.0;
         this.yearWork = (yearWork <= 10) ? yearWork : 0.0;
+        setGradeAndGpaScale();
     }
 
     /** Methods */
@@ -60,7 +63,16 @@ public class Marks {
 
     public double getTotalMark() {
         totalMark = finalExam + firstTest + yearWork;
+        setGradeAndGpaScale();
         return totalMark;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public double getGpaScale() {
+        return gpaScale;
     }
 
     @Override
@@ -75,5 +87,52 @@ public class Marks {
                              finalExam,
                              secondTest,
                              firstTest);
+    }
+
+    // Assigns grade and gpa scale based on mark
+    private void setGradeAndGpaScale() {
+        if (totalMark >= 95 && totalMark <= 100) {
+            grade = "A";
+            gpaScale = 4;
+        }
+        else if (totalMark >= 90 && totalMark < 95) {
+            grade = "A-";
+            gpaScale = 3.67;
+        }
+        else if (totalMark >= 85 && totalMark < 90) {
+            grade = "B+";
+            gpaScale = 3.33;
+        }
+        else if (totalMark >= 80 && totalMark < 85) {
+            grade = "B";
+            gpaScale = 3;
+        }
+        else if (totalMark >= 75 && totalMark < 80) {
+            grade = "B-";
+            gpaScale = 2.67;
+        }
+        else if (totalMark >= 70 && totalMark < 75) {
+            grade = "C+";
+            gpaScale = 2.33;
+        }
+        else if (totalMark >= 65 && totalMark < 70) {
+            grade = "C";
+            gpaScale = 2;
+        }
+        else if (totalMark >= 60 && totalMark < 65) {
+            grade = "C-";
+            gpaScale = 1.67;
+        }
+        else if (totalMark >= 55 && totalMark < 60) {
+            grade = "D+";
+            gpaScale = 1.33;
+        }
+        else if (totalMark >= 50 && totalMark < 55) {
+            grade = "D";
+            gpaScale = 1;
+        }
+        else {
+            grade = "F";
+        }
     }
 }

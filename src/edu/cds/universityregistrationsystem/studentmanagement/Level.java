@@ -22,13 +22,17 @@ public enum Level {
     }
 
     /**
+     *
      *  This method sets the student's level
      *  Based on the student classifications of credit hours
+     *
      * @param creditHrs
+     * takes the student credit hours finished so far
      * @return
+     * returns a level enum
      */
     @Contract(pure = true)
-    public static @Nullable Level setLevel(int creditHrs) {
+    public static Level setLevel(int creditHrs) {
         if (creditHrs <= 29)    return Level.FRESHMAN;
         else if (creditHrs <= 59)    return Level.SOPHOMORE;
         else if (creditHrs <= 89)    return Level.JUNIOR;

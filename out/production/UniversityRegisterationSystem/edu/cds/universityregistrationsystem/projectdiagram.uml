@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-206.30696798493406" y="-152.74293785310735">edu.cds.universityregistrationsystem.studentmanagement.Student</node>
+    <node x="153.0" y="-131.6403013182674">edu.cds.universityregistrationsystem.studentmanagement.RegistrationNumber</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Compact" zoom="1.4668508287292819" showDependencies="false" x="99.5" y="28.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

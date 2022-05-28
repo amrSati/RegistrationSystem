@@ -2,15 +2,17 @@ package edu.cds.universityregistrationsystem.studentmanagement;
 
 import java.time.LocalDate;
 
-public class LegalID {
+public class NationalID {
 
     /** Data fields */
+    private String nationality;
     private String type;
     private String idNumber;
     private LocalDate expireDate;
 
     /** Constructor */
-    public LegalID(String type, String idNumber, String expireDate) {
+    public NationalID(String nationality, String type, String idNumber, String expireDate) {
+        this.nationality = nationality;
         this.type = type;
         this.idNumber = idNumber;
         this.expireDate = LocalDate.parse(expireDate);

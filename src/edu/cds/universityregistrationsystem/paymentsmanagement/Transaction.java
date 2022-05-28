@@ -1,4 +1,4 @@
-package edu.cds.universityregistrationsystem.studentmanagement;
+package edu.cds.universityregistrationsystem.paymentsmanagement;
 
 import java.time.LocalDate;
 
@@ -65,10 +65,11 @@ public class Transaction {
     @Override
     public String toString() {
         // formats a transaction's arranged details
-        return String.format("Bank of Transaction: \t\t%s\n" +
-                             "Transaction Number: \t\t\t%d\n" +
-                             "Date of the Transaction: \t\t%d/%d/%d\n" +
-                             "Amount Paid:\t\t\t\t\t%d",
+        return String.format("""
+                        Bank of Transaction: \t\t%s
+                        Transaction Number: \t\t\t%d
+                        Date of the Transaction: \t\t%02d/%02d/%04d
+                        Amount Paid:\t\t\t\t\t%d""",
                              bankOfTransaction, transactionNumber,
                              dateOfTransaction.getDayOfMonth(), dateOfTransaction.getMonthValue(),
                              dateOfTransaction.getYear(), amountPaid);

@@ -1,23 +1,22 @@
 package edu.cds.universityregistrationsystem.coursesmanagement;
 
+import java.util.Stack;
+
 public class GPA {
 
     /** Data fields */
     private double gpa;
-    private int semestersFinished;
-    private double[] individualGPA = new double[10];
+    private int creditHrs;
+    private int semestersFinished = 0;
+    private Stack<Double> individualGPA = new Stack<>();
+    private CourseData[] courses;
 
-    /** Constructors */
-    public GPA() {
-        gpa = 0.0;
-        semestersFinished = 0;
-        for (double g: individualGPA)   g = 0.0;
-    }
-
-    public GPA(double gpa, int semestersFinished, double[] individualGPA) {
-        this.gpa = gpa;
-        this.semestersFinished = semestersFinished;
-        this.individualGPA = individualGPA;
+    /** Constructor */
+    public GPA(int creditHrs, CourseData[] courses) {
+        this.creditHrs = creditHrs;
+        this.courses = courses;
+        calculateGpa();
+        semestersFinished++;
     }
 
     /** Methods */
@@ -25,23 +24,17 @@ public class GPA {
         return gpa;
     }
 
-    public void setGPA(double gpa) {
-        this.gpa = gpa;
-    }
-
     public int getSemestersFinished() {
         return semestersFinished;
     }
 
-    public void setSemestersFinished(int semestersFinished) {
-        this.semestersFinished = semestersFinished;
-    }
+    // Calculate the weighted gpa
+    private void calculateGpa() {
+        double total = 0;
 
-    public double[] getIndividualGPA() {
-        return individualGPA;
-    }
+        for (CourseData courseData: courses)
+            total += courseData.getWeightedGpa();
 
-    public void setIndividualGPA(double[] individualGPA) {
-        this.individualGPA = individualGPA;
+        gpa = total / creditHrs;
     }
 }

@@ -12,7 +12,7 @@ public class Contact {
 
     // email validity pattern
     public static final Pattern VALID_EMAIL =
-            Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+            Pattern.compile("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
     /** Constructor */
     public Contact(String email, String homeNumber, String mobileNumber) {
@@ -47,7 +47,7 @@ public class Contact {
     }
 
     // Validates an email
-    public static boolean validate(String email) {
+    private boolean validate(String email) {
         Matcher matcher = VALID_EMAIL.matcher(email);
         return matcher.find();
     }

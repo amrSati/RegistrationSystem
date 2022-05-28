@@ -17,11 +17,11 @@ public class Courses {
     private Stack<CourseData> finishedCourses = new Stack<>();
 
     /** Constructors */
-    public Courses(int numberOfCourses, int totalCreditHrs, CourseData[] currentCourses, Stack<CourseData> finishedCourses) {
+    public Courses(int numberOfCourses, int totalCreditHrs, CourseData[] currentCourses) {
         this.numberOfCourses = numberOfCourses;
         this.totalCreditHrs = totalCreditHrs;
         this.currentCourses = currentCourses;
-        this.finishedCourses = finishedCourses;
+        setFinishedCourses();
     }
 
     /** Methods */
@@ -47,13 +47,15 @@ public class Courses {
 
     public void setCurrentCourses(CourseData[] currentCourses) {
         this.currentCourses = currentCourses;
+        setFinishedCourses();
     }
 
     public Stack<CourseData> getFinishedCourses() {
         return finishedCourses;
     }
 
-    public void setFinishedCourses(Stack<CourseData> finishedCourses) {
-        this.finishedCourses = finishedCourses;
+    private void setFinishedCourses() {
+        for (CourseData courseData: currentCourses)
+            if (courseData.isPassed())  finishedCourses.push(courseData);
     }
 }

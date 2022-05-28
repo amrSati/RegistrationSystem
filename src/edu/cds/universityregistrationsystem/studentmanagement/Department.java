@@ -1,4 +1,4 @@
-package edu.cds.universityregistrationsystem.coursesmanagement;
+package edu.cds.universityregistrationsystem.studentmanagement;
 
 /**
  *  Organizes the department and it's code
@@ -10,11 +10,6 @@ public class Department {
 	private int departmentCode;
 	
 	// Constructors
-	public Department() {
-		department = null;
-		departmentCode = 0;
-	}
-
 	public Department(String department, int departmentCode) {
 		this.department = department;
 		this.departmentCode = departmentCode;

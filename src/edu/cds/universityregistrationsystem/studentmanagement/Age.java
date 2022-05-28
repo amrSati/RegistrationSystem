@@ -37,7 +37,7 @@ public class Age {
         LocalDate currentDate = LocalDate.now();
 
         // Compute age
-        if (dateOfBirth != null && currentDate != null)
+        if (dateOfBirth != null)
             age = Period.between(dateOfBirth, currentDate).getYears();
         else
             age = 0;

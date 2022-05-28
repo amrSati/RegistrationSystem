@@ -1,4 +1,4 @@
-package edu.cds.universityregistrationsystem.studentmanagement;
+package edu.cds.universityregistrationsystem.paymentsmanagement;
 
 import java.util.Stack;
 
@@ -22,7 +22,7 @@ public class Payments {
       *  Only takes the type of funding of the student
       *  and the payments details should be added manually,
       *
-      *  the number of all payments done and the total amount
+      *  the number of all payments done and the total amount paid
       *  shall be calculated automatically
       **/
     public Payments(String typeOfFunding) {
@@ -52,9 +52,9 @@ public class Payments {
     public void addPayment(Transaction transaction) {
         paymentsDetails.push(transaction);
 
-        /**
-         *  Increment total amount paid so far, and number of payments
-         **/
+        /*
+           Increment total amount paid so far, and number of payments
+         */
         totalAmountPaid += transaction.getAmountPaid();
         numberOfPaymentsDone++;
     }
@@ -80,5 +80,4 @@ public class Payments {
     public String getLatestPayment() {
         return paymentsDetails.peek().toString();
     }
-
 }
